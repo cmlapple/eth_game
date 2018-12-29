@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+    <TextView
+        android:id="@+id/user"
+        android:layout_width="60dp"
+        android:layout_height="wrap_content"
+        android:text="用户名"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="10dp"
+        android:textSize="20dp"/>
+    <EditText
+        android:id="@+id/userstring"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/user"/>
+    <TextView
+        android:id="@+id/psd"
+        android:layout_width="60dp"
+        android:layout_height="wrap_content"
+        android:text="密码"
+        android:layout_below="@id/user"
+        android:layout_marginTop="10dp"
+        android:textSize="20dp"/>
+    <EditText
+        android:id="@+id/psdstring"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/user"
+        android:layout_toRightOf="@id/psd"/>
+    <LinearLayout
+        android:id="@+id/buttongroup1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_below="@id/psd"
+        android:weightSum="2">
+
+        <Button
+            android:id="@+id/login"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="登录"
+            android:layout_weight="1"
+            android:onClick="login"/>
+
+        <Button
+            android:id="@+id/register"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="注册"
+            android:layout_weight="1"
+            android:onClick="register"/>
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/buttongroup2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/buttongroup1"
+        android:orientation="horizontal"
+        android:weightSum="4">
+
+        <Button
+            android:id="@+id/showView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="版本"
+            android:layout_weight="1"/>
+        <Button
+            android:id="@+id/opencase"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="开箱"
+            android:layout_weight="1"
+            android:onClick="OpenCase"/>
+        <Button
+            android:id="@+id/check"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="查看"
+            android:layout_weight="1"
+            android:onClick="checkgun"/>
+        <Button
+            android:id="@+id/balance"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="余额"
+            android:layout_weight="1"
+            android:onClick="getBalance"/>
+
+    </LinearLayout>
+
+<ScrollView
+    android:id="@+id/cmd"
+    android:layout_width="match_parent"
+    android:layout_height="fill_parent"
+    android:layout_below="@id/buttongroup2"
+    android:nextFocusDown="@id/textview">
+    <TextView
+        android:id="@+id/textview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/showView"
+        android:text="等待连接到geth...\n"
+        />
+</ScrollView>
+
+
+</RelativeLayout>
